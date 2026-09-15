@@ -1,0 +1,109 @@
+@use '../helpers' as *;
+
+.header {
+  --header-bg: transparent;
+  --header-color: var(--color-text-white);
+  --header-color-muted: var(--color-text-white-70);
+  --header-button-bg: var(--color-burger-button);
+  --header-button-line: var(--color-text);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: var(--header-bg);
+  transition: background-color var(--transition-duration) ease;
+
+  &--light {
+    --header-bg: var(--color-about);
+    --header-color: var(--color-text);
+    --header-color-muted: var(--color-text-70);
+    --header-button-bg: var(--color-text);
+    --header-button-line: var(--color-about);
+  }
+
+  &--dark {
+    --header-bg: var(--color-text);
+    --header-color: var(--color-text-white);
+    --header-color-muted: var(--color-text-white-70);
+    --header-button-bg: var(--color-burger-button);
+    --header-button-line: var(--color-text);
+  }
+
+  &__body {
+    padding-inline: rem(30);
+
+    &-inner {
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      min-height: rem(117);
+    }
+  }
+
+  &__logo {
+    padding: 0;
+    padding-block: rem(47.5);
+    color: var(--header-color);
+    transition: color var(--transition-duration) ease;
+
+    @include hover {
+      color: var(--header-color-muted);
+    }
+
+    &:focus-visible {
+      outline: rem(2) solid currentColor;
+      outline-offset: rem(4);
+    }
+  }
+
+&__nav-group{
+  display: flex;
+  align-items: center;
+  gap: rem(306);
+}
+  &__menu {
+
+    &-list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: rem(40);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-item {
+
+    }
+
+    &-link {
+      text-decoration: none;
+      color: var(--header-color-muted);
+      transition: color var(--transition-duration) ease;
+      font-size: rem(16);
+      line-height: 1;
+      padding: 0;
+      padding-block: rem(50.5);
+      position: relative;
+      font-family: var(--font-family-base), sans-serif;
+      text-transform: uppercase;
+      font-weight: 400;
+
+      @include hover {
+        color: var(--header-color);
+      }
+
+      &:focus-visible {
+        outline: rem(2) solid currentColor;
+        outline-offset: rem(4);
+      }
+    }
+  }
+
+}
+
+

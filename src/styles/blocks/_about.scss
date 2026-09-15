@@ -1,0 +1,43 @@
+@use '../helpers' as *;
+
+.about {
+background-color: var(--color-about);
+  &__content {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: rem(268);
+    justify-content: start;
+    padding-block: rem(140);
+  }
+
+  &__title {
+    @include
+    title(rem(45), var(--color-text));
+    text-transform: uppercase;
+
+    &-line {
+      @include line-mask;
+    }
+
+    &-text {
+      display: block;
+    }
+
+    &-accent {
+      margin-inline-end: rem(14);
+    }
+  }
+
+  &__description-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem(28);
+
+  }
+
+  &__description {
+    @include
+    description(rem(20), var(--color-text-lighter));
+
+  }
+}

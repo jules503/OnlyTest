@@ -1,0 +1,104 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Only
+  body
+    header.header(data-js-header)
+      .header__body
+        .header__body-inner
+          a.header__logo(href="/" title="Home" aria-label="Home")
+            svg(width="125" height="22" aria-hidden="true")
+              use(href="/icons/sprite.svg#main-logo")
+          .header__nav-group
+            nav.header__menu
+              ul.header__menu-list
+                li.header__menu-item
+                  a.header__menu-link(href="#") услуги
+                li.header__menu-item
+                  a.header__menu-link(href="#") поддержка
+                li.header__menu-item
+                  a.header__menu-link(href="#") компания
+                li.header__menu-item
+                  a.header__menu-link(href="#") партнеры
+                li.header__menu-item
+                  a.header__menu-link(href="#") портфолио
+                li.header__menu-item
+                  a.header__menu-link(href="#") контакты
+            button.burger-button(
+              type="button"
+              aria-label="Open Menu"
+              title="Open Menu"
+              data-js-header-burger-button
+            )
+              span.burger-button__line
+              span.burger-button__line
+              span.burger-button__line
+
+    main.main
+      section.hero(aria-labelledby="hero-title" data-header-theme="transparent")
+        .hero__main
+          img.hero__image(
+            src="/images/main-background.jpg"
+            alt=""
+            width="1920"
+            height="800"
+          )
+          .hero__overlay
+          .hero__fade
+          .hero__body.container
+            h1#hero-title.hero__title
+              span.hero__title-line
+                span.hero__title-text превращаем окружение
+              span.hero__title-line.hero__title-line--accent
+                span.hero__title-text в живые сады
+            p.hero__subtitle Вертикальное озеленение для бизнеса. Преображаем бизнес центры, ТЦ, отели, рестораны и другие коммерческие помещения.
+
+      section.about(aria-labelledby="about-title" data-header-theme="dark" data-reveal="about")
+        .about__content.container
+          h2#about-title.about__title
+            span.about__title-line
+              span.about__title-text
+                em.about__title-accent достаточно
+                |  найти
+            span.about__title-line
+              span.about__title-text одну опорную стену
+          .about__description-wrapper
+            p.about__description
+              | Вертикальное озеленение – это инновационный способ интеграции природы#[br]
+              | в городскую среду.
+            p.about__description
+              | Эти живые конструкции, состоящие из растений, закреплённых на вертикальных#[br]
+              | поверхностях, не только преображают внешний вид зданий и интерьеров,#[br]
+              | но и приносят ощутимую пользу: улучшают качество воздуха, снижают#[br]
+              | температуру окружающей среды, создают звукоизоляцию и, конечно, дарят#[br]
+              | эстетическое удовольствие, превращая бетонные стены в цветущие оазисы.
+
+      section.support(aria-labelledby="support-title" data-header-theme="light" data-reveal="support")
+        .support__content
+          .support__description-wrapper
+            .support__text-wrapper
+              h2#support-title.support__title
+                span.support__title-line
+                  span.support__title-text
+                    em ежемесячная
+                span.support__title-line
+                  span.support__title-text поддержка от нас
+              p.support__description Ежемесячно проверяем состояние растений, бережно чистим от пыли и при необходимости заменяем растения.
+            .support__button-wrapper
+              button.support__button(
+                type="button"
+                aria-label="Подробнее о поддержке"
+                title="Подробнее о поддержке"
+              )
+                svg(width="27" height="20" aria-hidden="true")
+                  use(href="/icons/sprite.svg#support-button")
+              p.support__button-text КОНСУЛЬТАЦИЯ
+
+          img.support__image(
+            src="/images/support-background.jpg"
+            alt=""
+          )
+
+    script(type="module" src="/src/main.ts")

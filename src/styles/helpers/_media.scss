@@ -1,0 +1,31 @@
+@use './functions' as *;
+
+$tablet: 768.98;
+$mobile: 360.98;
+
+@mixin tablet {
+  @media (width <= rem($tablet)) {
+    @content
+  }
+}
+
+@mixin mobile {
+  @media (width <= rem($mobile)) {
+    @content
+  }
+}
+
+@mixin hover($hasActiveEffectOnMobile:true) {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  @if ($hasActiveEffectOnMobile) {
+    @media (any-hover: none) {
+      &:active {
+        @content;
+      }
+    }
+  }
+}

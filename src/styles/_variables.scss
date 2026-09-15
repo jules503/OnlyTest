@@ -1,0 +1,31 @@
+@use 'helpers' as *;
+
+:root {
+  --color-text-white: #FFFFFF;
+  --color-text-white-70: #FFFFFFB3;
+  --color-text: #1C2500;
+  --color-text-lighter: #1C2500CC;
+  --color-text-70: #1C2500B3;
+  --color-burger-button: #EDECE2;
+  --color-about:#EDECE2;
+  --color-hero-overlay: #2C1D04;
+
+  --font-family-base: 'Arial Nova', sans-serif;
+  --font-family-title: 'Cormorant Garamond', serif;
+
+
+  --container-width: #{rem(1546)};
+  --container-padding-x: #{rem(187)};
+
+  --transition-duration:0.2s;
+
+  @include tablet {
+    --container-width: #{rem(688)};
+    --container-padding-x: #{rem(40)};
+  }
+
+  @include mobile {
+    --container-width: #{rem(320)};
+    --container-padding-x: #{rem(20)};
+  }
+}

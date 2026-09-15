@@ -1,0 +1,21 @@
+{
+  "name": "only-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/pug": "^2.0.10",
+    "pug": "^3.0.4",
+    "sass": "^1.104.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.2"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
+  }
+}

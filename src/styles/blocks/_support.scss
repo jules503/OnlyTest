@@ -1,0 +1,93 @@
+@use '../helpers' as *;
+
+.support {
+  background-color: var(--color-text);
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, rem(960));
+    column-gap: rem(273);
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin-inline: auto;
+    padding-inline-start: var(--container-padding-x);
+  }
+
+  &__title {
+    @include
+    title(rem(45), var(--color-text-white));
+    text-transform: uppercase;
+    &-line {
+      @include line-mask;
+    }
+
+    &-text {
+      display: block;
+    }
+  }
+
+  &__description-wrapper {
+    padding-top: rem(120);
+    padding-bottom: rem(40);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: rem(40);
+  }
+
+  &__button {
+    @include flex-center;
+    @include rectangle(rem(50), rem(45));
+    padding: 0;
+    background-color: var(--color-burger-button);
+    border: none;
+    color: var(--color-text-white);
+    border-radius: rem(4);
+    transition: opacity var(--transition-duration) ease;
+
+    @include hover {
+      opacity: 0.8;
+    }
+
+    &:focus-visible {
+      outline: rem(2) solid var(--color-text-white);
+      outline-offset: rem(4);
+    }
+
+    svg {
+      color: var(--color-text);
+      flex-shrink: 0;
+    }
+
+    &-wrapper{
+      margin-top: auto;
+    }
+
+    &-text{
+      @include title(rem(22), var(--color-text-white));
+    }
+  }
+
+  &__description {
+    @include
+    description(rem(20), var(--color-text-white));
+
+  }
+
+  &__button-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:rem(15);
+
+  }
+
+  &__image {
+    width: 100%;
+    height: rem(700);
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,35 @@
+@use '../helpers' as *;
+
+.burger-button{
+  padding-block: rem(36);
+
+  @include rectangle(rem(50), rem(45));
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: rem(16.5) rem(11) rem(14.5);
+  background-color: var(--header-button-bg, var(--color-burger-button));
+  transition:
+    background-color var(--transition-duration) ease,
+    opacity var(--transition-duration) ease;
+  border: none;
+  border-radius: rem(4);
+
+  @include hover {
+    opacity: 0.8;
+  }
+
+  &:focus-visible {
+    outline: rem(2) solid var(--header-color);
+    outline-offset: rem(4);
+  }
+
+  &__line{
+      width: 100%;
+      height: rem(1);
+      background-color: var(--header-button-line, var(--color-text));
+    transition: background-color var(--transition-duration) ease;
+    flex-shrink: 0;
+  }
+}

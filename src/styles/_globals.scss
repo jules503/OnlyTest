@@ -1,0 +1,11 @@
+@use 'helpers' as *;
+
+body{
+  font-family: var(--font-family-base);
+}
+html.is-lock {
+  overflow: hidden;
+}
+html {
+  scroll-padding-top: rem(117);
+}
