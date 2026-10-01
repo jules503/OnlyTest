@@ -1,13 +1,11 @@
 import { gsap } from 'gsap';
 
-/**
- * Появление блоков при попадании в экран.
- *
- * Таймлайны собираются сразу на старте и ставятся на паузу — за счёт этого
- * .from() применяет начальные состояния немедленно, и содержимое не успевает
- * мелькнуть в готовом виде перед анимацией. Intersection Observer только
- * запускает готовый таймлайн и отписывается: появление одноразовое.
- */
+// Появление блоков при попадании в экран.
+//
+// Таймлайны собираются сразу на старте и ставятся на паузу — за счёт этого
+// .from() применяет начальные состояния немедленно, и содержимое не успевает
+// мелькнуть в готовом виде перед анимацией. Intersection Observer только
+// запускает готовый таймлайн и отписывается: появление одноразовое.
 type RevealName = 'about' | 'support';
 
 const builders: Record<RevealName, (root: HTMLElement) => gsap.core.Timeline> = {
@@ -65,11 +63,7 @@ function isRevealName(value: string | undefined): value is RevealName {
   return value === 'about' || value === 'support';
 }
 
-export function initReveal(): void {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return;
-  }
-
+export function initReveal() {
   const blocks = document.querySelectorAll<HTMLElement>('[data-reveal]');
 
   if (blocks.length === 0) {

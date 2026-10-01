@@ -1,0 +1,25 @@
+section.support(aria-labelledby="support-title" data-header-theme="light" data-reveal="support")
+  .support__content
+    .support__description-wrapper
+      .support__text-wrapper
+        h2#support-title.support__title
+          span.support__title-line
+            span.support__title-text
+              em ежемесячная
+          span.support__title-line
+            span.support__title-text поддержка от нас
+        p.support__description Ежемесячно проверяем состояние растений, бережно чистим от пыли и при необходимости заменяем растения.
+      .support__button-wrapper
+        button.support__button(
+          type="button"
+          aria-label="Подробнее о поддержке"
+          title="Подробнее о поддержке"
+        )
+          svg(width="27" height="20" aria-hidden="true")
+            use(href="/icons/sprite.svg#support-button")
+        p.support__button-text Консультация
+
+    img.support__image(
+      src="/images/support-background.jpg"
+      alt=""
+    )

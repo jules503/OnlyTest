@@ -7,9 +7,12 @@
     display: grid;
     grid-template-columns: 1fr minmax(0, rem(960));
     column-gap: rem(273);
-    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-    margin-inline: auto;
-    padding-inline-start: var(--container-padding-x);
+    padding-inline-start: calc(
+      max(
+        0px,
+        (100% - (var(--container-width) + var(--container-padding-x) * 2)) / 2
+      ) + var(--container-padding-x)
+    );
   }
 
   &__title {
@@ -30,6 +33,7 @@
     padding-bottom: rem(40);
     display: flex;
     flex-direction: column;
+    max-width: rem(500);
   }
 
   &__text-wrapper{
@@ -68,6 +72,7 @@
 
     &-text{
       @include title(rem(22), var(--color-text-white));
+      text-transform: uppercase;
     }
   }
 

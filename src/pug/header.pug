@@ -1,0 +1,30 @@
+header.header(data-js-header)
+  .header__body
+    .header__body-inner
+      a.header__logo(href="/" title="Home" aria-label="Home")
+        svg(width="125" height="22" aria-hidden="true")
+          use(href="/icons/sprite.svg#main-logo")
+      .header__nav-group
+        nav.header__menu
+          ul.header__menu-list
+            li.header__menu-item
+              a.header__menu-link(href="#") услуги
+            li.header__menu-item
+              a.header__menu-link(href="#") поддержка
+            li.header__menu-item
+              a.header__menu-link(href="#") компания
+            li.header__menu-item
+              a.header__menu-link(href="#") партнеры
+            li.header__menu-item
+              a.header__menu-link(href="#") портфолио
+            li.header__menu-item
+              a.header__menu-link(href="#") контакты
+        button.burger-button(
+          type="button"
+          aria-label="Open Menu"
+          title="Open Menu"
+          data-js-header-burger-button
+        )
+          span.burger-button__line
+          span.burger-button__line
+          span.burger-button__line
